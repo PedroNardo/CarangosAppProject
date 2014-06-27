@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.caelum.fj59.carangos"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="18" />
+
+    <permission
+        android:name="br.com.caelum.fj59.carangos.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission
+        android:name="br.com.caelum.fj59.carangos.permission.C2D_MESSAGE" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- App receives GCM messages. -->
+    <uses-permission
+        android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- GCM requires a Google account. -->
+    <uses-permission
+        android:name="android.permission.GET_ACCOUNTS" />
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name=".app.CarangosApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="br.com.caelum.fj59.carangos.activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="br.com.caelum.fj59.carangos.activity.LeilaoActivity"
+            android:label="Leilao" >
+        </activity>
+
+        <receiver
+            android:name="br.com.caelum.fj59.carangos.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="br.com.caelum.fj59.carangos" />
+            </intent-filter>
+
+        </receiver>
+
+    </application>
+
+</manifest>
