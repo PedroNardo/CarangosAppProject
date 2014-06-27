@@ -1,10 +1,15 @@
 package br.com.caelum.fj59.carangos.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.lang.Override;
+import java.lang.String;
 import java.util.List;
 
 import br.com.caelum.fj59.carangos.R;
@@ -126,4 +131,18 @@ public class MainActivity extends Activity implements BuscaMaisPostsDelegate {
         this.observadorLeilaoIniciado.desregistra(getCarangosApplication());
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuItem compras = menu.add("Compras");
+        compras.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+
+        String acaoCustomizada = getResources()
+                                    .getString(R.string.action_compra);
+        Intent intent = new Intent(acaoCustomizada);
+
+        compras.setIntent(intent);
+
+        return super.onCreateOptionsMenu(menu);
+    }
 }

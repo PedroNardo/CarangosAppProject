@@ -38,6 +38,16 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <activity
+            android:name="br.com.caelum.fj59.carangos.activity.TunningComprasActivity"
+            android:label="@string/title_activity_tunning_compras" >
+            <intent-filter>
+                <action android:name="br.com.caelum.fj59.carangos.compra.Tunning" />
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name="br.com.caelum.fj59.carangos.activity.MainActivity"
             android:label="@string/app_name" >

@@ -5,5 +5,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="mensagem_invalida">Mensagem inválida! (mínimo de 10 caracteres)</string>
     <string name="server_uri">http://carangos.herokuapp.com/%s</string>
+    <string name="action_compra">DEFINIR UMA ACTION</string>
 
 </resources>

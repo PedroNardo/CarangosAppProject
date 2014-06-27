@@ -5,5 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="mensagem_invalida">Mensagem inválida! (mínimo de 10 caracteres)</string>
     <string name="server_uri">http://carangostunning.herokuapp.com/%s</string>
+    <string name="action_compra">br.com.caelum.fj59.carangos.compra.Tunning</string>
+    <string name="title_activity_tunning_compras">Carros Tunados</string>
 
 </resources>
