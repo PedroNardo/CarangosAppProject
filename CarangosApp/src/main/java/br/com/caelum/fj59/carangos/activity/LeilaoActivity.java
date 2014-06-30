@@ -16,6 +16,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import br.com.caelum.fj59.carangos.R;
+import br.com.caelum.fj59.carangos.app.CarangosApplication;
 import br.com.caelum.fj59.carangos.converter.LanceConverter;
 import br.com.caelum.fj59.carangos.infra.MyLog;
 import br.com.caelum.fj59.carangos.modelo.Lance;
@@ -30,8 +31,9 @@ public class LeilaoActivity extends Activity {
     private Calendar horarioUltimaBusca;
 
     @Override
-    protected  void onCreate(Bundle savedInstanceState) {
+    protected  void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setContentView(R.layout.leilao);
         setContentView(R.layout.leilao);
 
         final ListView lancesList = (ListView) findViewById(R.id.lances_list);
@@ -63,13 +65,14 @@ public class LeilaoActivity extends Activity {
             public void run() {
                 MyLog.i("Efetuando nova busca!");
                 WebClient webClient;
+                CarangosApplication carangosApplication = new CarangosApplication(); //VERIFICAR NA APOSTILA!!!
 
                 if (horarioUltimaBusca != null) {
                     webClient = new WebClient("leilao/leilaoid54635/" +
                         new SimpleDateFormat("ddMMyy-HHmmss")
-                        .format(horarioUltimaBusca.getTime()));
+                        .format(horarioUltimaBusca.getTime()), carangosApplication);
                 } else {
-                    webClient = new WebClient("leilao/leilaoid54635");
+                    webClient = new WebClient("leilao/leilaoid54635", carangosApplication);
                 }
 
                 String json = webClient.get();

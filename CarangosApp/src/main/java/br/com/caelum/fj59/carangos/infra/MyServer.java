@@ -3,6 +3,8 @@ package br.com.caelum.fj59.carangos.infra;
 import android.app.Application;
 import android.os.Build;
 
+import br.com.caelum.fj59.carangos.R;
+
 public class MyServer {
     private static String uri;
 

@@ -1,0 +1,4 @@
+O projeto apresenta algumas pendências:
+***************************************
+1. Terminar o projeto, seguindo os últimos exercícios da postila;
+2. No build.gradle da CarangosApp, a linha "app plugin" foi alterada, de acordo com o sugerido pela ide.
